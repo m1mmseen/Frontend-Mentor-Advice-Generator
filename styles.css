@@ -1,0 +1,133 @@
+@font-face {
+    font-family: manrope;
+    src: url("fonts/Manrope-Bold.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: manrope;
+    src: url("fonts/Manrope-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --light-neon-green: hsl(150, 75%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%)
+}
+/* ------ GENERAL ------ */
+
+html {
+    margin: 0;
+    width: 100%;
+}
+
+body {
+    font-family: 'manrope', sans-serif;
+    font-size: 28px;
+    background-color: var(--dark-blue);
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1{
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    color: var(--light-neon-green);
+}
+
+/* ------ CARD ------ */
+
+.card {
+    box-sizing: border-box;
+    width: 600px;
+    height: 350px;
+    background-color: var(--dark-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    border-radius: 15px;
+    padding: 0 4rem;
+}
+
+
+
+/* ------ ADVICE ------ */
+
+p {
+    color: var(--light-cyan);
+    font-weight: 800;
+}
+p::before, p::after {
+    content: '"';
+}
+
+/* ------ DIVIDER ------ */
+.divider-desktop, .divider-mobile {
+    position: relative;
+    width: 90%;
+}
+
+.divider-mobile {
+    display: none;
+    width: 80%;
+}
+
+.divider-desktop img, .divider-mobile img {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+/* ------ BUTTON ------ */
+
+button {
+    position: absolute;
+    bottom: -9%;
+    padding: 1rem;
+    border-radius: 50px;
+    background-color: var(--light-neon-green);
+    border: transparent;
+}
+
+button:hover {
+    box-shadow: 0 0 20px 2px var(--light-neon-green);
+    cursor: pointer;
+}
+
+/* ------ MEDIA QUERIES ------ */
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 90%;
+        height: 60%;
+    }
+    .divider-desktop {
+        display: none;
+    }
+    .divider-mobile {
+        display: block;
+    }
+    button {
+        bottom: -7%;
+    }
+    p {
+        font-size: 2rem;
+    }
+}
+
